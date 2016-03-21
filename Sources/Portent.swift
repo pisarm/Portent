@@ -10,7 +10,12 @@ import Foundation
 
 public final class Portent {
     //MARK: Properties
-    private var receivers: [EventReceiver] = []
+    private var receivers: [EventReceiver]
+
+    
+    public init() {
+        self.receivers = []
+    }
 
     //MARK:
     public func addReceiver(receiver: EventReceiver) {
