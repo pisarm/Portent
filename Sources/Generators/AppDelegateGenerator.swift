@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-final class AppDelegateGenerator {
+public final class AppDelegateGenerator {
     private let eventType: EventType
     private let logger: Portent
 
-    init(eventType: EventType = .Info, logger: Portent) {
+    public init(eventType: EventType = .Info, logger: Portent) {
         self.eventType = eventType
         self.logger = logger
 

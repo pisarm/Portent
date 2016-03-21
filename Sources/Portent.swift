@@ -12,7 +12,7 @@ public final class Portent {
     //MARK: Properties
     private var receivers: [EventReceiver]
 
-    
+    //MARK: Initialization
     public init() {
         self.receivers = []
     }

@@ -9,7 +9,13 @@
 import Foundation
 
 public final class ConsoleReceiver {
-    private let serialQueue: dispatch_queue_t = dispatch_queue_create("ConsoleReceiverQueue", DISPATCH_QUEUE_SERIAL)
+    //MARK: Properties
+    private let serialQueue: dispatch_queue_t
+
+    //MARK: Initialization
+    public init() {
+        self.serialQueue = dispatch_queue_create("ConsoleReceiverQueue", DISPATCH_QUEUE_SERIAL)
+    }
 }
 
 extension ConsoleReceiver: EventReceiver {

@@ -9,12 +9,12 @@
 import CoreData
 import Foundation
 
-final class CoreDataGenerator {
+public final class CoreDataGenerator {
     private var context: NSManagedObjectContext?
     private let eventType: EventType
     private let logger: Portent
 
-    init(observedContext context: NSManagedObjectContext, eventType: EventType = .Info, logger: Portent) {
+    public init(observedContext context: NSManagedObjectContext, eventType: EventType = .Info, logger: Portent) {
         self.context = context
         self.eventType = eventType
         self.logger = logger
