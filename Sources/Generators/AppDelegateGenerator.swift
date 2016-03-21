@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-final class ApplicationEventGenerator {
+final class AppDelegateGenerator {
     private let eventType: EventType
     private let logger: Portent
 

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4DD21F11C5D70AB0057CF8F"
                BuildableName = "Portent.framework"
-               BlueprintName = "Portent"
+               BlueprintName = "Portent(iOS)"
                ReferencedContainer = "container:Portent.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4DD21F11C5D70AB0057CF8F"
             BuildableName = "Portent.framework"
-            BlueprintName = "Portent"
+            BlueprintName = "Portent(iOS)"
             ReferencedContainer = "container:Portent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4DD21F11C5D70AB0057CF8F"
             BuildableName = "Portent.framework"
-            BlueprintName = "Portent"
+            BlueprintName = "Portent(iOS)"
             ReferencedContainer = "container:Portent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,7 +95,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4DD21F11C5D70AB0057CF8F"
             BuildableName = "Portent.framework"
-            BlueprintName = "Portent"
+            BlueprintName = "Portent(iOS)"
             ReferencedContainer = "container:Portent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

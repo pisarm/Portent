@@ -7,22 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E41DB8511C6A735B00EDD1C4 /* CoreDataEventGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DB8501C6A735B00EDD1C4 /* CoreDataEventGenerator.swift */; };
-		E42E6B0C1C6882AC00DACF11 /* ApplicationEventGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42E6B0B1C6882AC00DACF11 /* ApplicationEventGenerator.swift */; };
-		E42E6B0E1C6882B200DACF11 /* ConsoleReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42E6B0D1C6882B200DACF11 /* ConsoleReceiver.swift */; };
-		E44A61EB1C64A3E3006B3A7D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A61EA1C64A3E3006B3A7D /* Event.swift */; };
-		E46118C71C67F4E9002D8687 /* PortentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46118C61C67F4E9002D8687 /* PortentTests.swift */; };
-		E464A62C1C67E0080041E954 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464A62B1C67E0080041E954 /* ManagedObject.swift */; };
-		E464A62E1C67E0D60041E954 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464A62D1C67E0D60041E954 /* ManagedObjectContext.swift */; };
-		E464A6301C67E3470041E954 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464A62F1C67E3470041E954 /* Stack.swift */; };
-		E4AD43141C6B2D8D00E852D1 /* ApplicationEventGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD43131C6B2D8D00E852D1 /* ApplicationEventGeneratorTests.swift */; };
 		E4DD21FD1C5D70AB0057CF8F /* Portent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD21F21C5D70AB0057CF8F /* Portent.framework */; };
-		E4DD22131C5D71760057CF8F /* Portent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DD22121C5D71760057CF8F /* Portent.swift */; };
-		E4DD22191C5D74EA0057CF8F /* Portent.h in Headers */ = {isa = PBXBuildFile; fileRef = E4DD22181C5D74EA0057CF8F /* Portent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4DD221C1C5D7F6E0057CF8F /* PortentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4DD221A1C5D7F6E0057CF8F /* PortentModel.xcdatamodeld */; };
-		E4DD22201C5EA8880057CF8F /* EventReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DD221F1C5EA8880057CF8F /* EventReceiver.swift */; };
-		E4FB32851C6BFA5E00CEDC52 /* LogglyReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FB32841C6BFA5E00CEDC52 /* LogglyReceiver.swift */; };
-		E4FB32881C6BFB8F00CEDC52 /* MockReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FB32871C6BFB8F00CEDC52 /* MockReceiver.swift */; };
+		E4F0471C1C9DE94E00D09D7E /* MockReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047191C9DE93100D09D7E /* MockReceiver.swift */; };
+		E4F0471E1C9DE95600D09D7E /* PortentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047151C9DE92000D09D7E /* PortentTests.swift */; };
+		E4F0472C1C9DEBEC00D09D7E /* Portent.h in Headers */ = {isa = PBXBuildFile; fileRef = E4F047291C9DEBEC00D09D7E /* Portent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4F0472D1C9DEBEC00D09D7E /* Portent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0472A1C9DEBEC00D09D7E /* Portent.swift */; };
+		E4F047371C9DEC6700D09D7E /* AppDelegateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047351C9DEC6700D09D7E /* AppDelegateGenerator.swift */; };
+		E4F047381C9DEC6700D09D7E /* CoreDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047361C9DEC6700D09D7E /* CoreDataGenerator.swift */; };
+		E4F0473B1C9DED2800D09D7E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0473A1C9DED2800D09D7E /* Event.swift */; };
+		E4F0473E1C9DED4600D09D7E /* EventReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0473D1C9DED4600D09D7E /* EventReceiver.swift */; };
+		E4F047421C9DED6100D09D7E /* ConsoleReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047401C9DED6100D09D7E /* ConsoleReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,24 +30,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E41DB8501C6A735B00EDD1C4 /* CoreDataEventGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataEventGenerator.swift; sourceTree = "<group>"; };
-		E42E6B0B1C6882AC00DACF11 /* ApplicationEventGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEventGenerator.swift; sourceTree = "<group>"; };
-		E42E6B0D1C6882B200DACF11 /* ConsoleReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleReceiver.swift; sourceTree = "<group>"; };
-		E44A61EA1C64A3E3006B3A7D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		E46118C61C67F4E9002D8687 /* PortentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortentTests.swift; sourceTree = "<group>"; };
-		E464A62B1C67E0080041E954 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
-		E464A62D1C67E0D60041E954 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
-		E464A62F1C67E3470041E954 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		E4AD43131C6B2D8D00E852D1 /* ApplicationEventGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEventGeneratorTests.swift; sourceTree = "<group>"; };
 		E4DD21F21C5D70AB0057CF8F /* Portent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Portent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DD21FC1C5D70AB0057CF8F /* PortentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4DD220E1C5D713A0057CF8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4DD22121C5D71760057CF8F /* Portent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portent.swift; sourceTree = "<group>"; };
-		E4DD22181C5D74EA0057CF8F /* Portent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portent.h; sourceTree = "<group>"; };
-		E4DD221B1C5D7F6E0057CF8F /* PortentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortentModel.xcdatamodel; sourceTree = "<group>"; };
-		E4DD221F1C5EA8880057CF8F /* EventReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventReceiver.swift; sourceTree = "<group>"; };
-		E4FB32841C6BFA5E00CEDC52 /* LogglyReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogglyReceiver.swift; sourceTree = "<group>"; };
-		E4FB32871C6BFB8F00CEDC52 /* MockReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockReceiver.swift; sourceTree = "<group>"; };
+		E4F047151C9DE92000D09D7E /* PortentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortentTests.swift; sourceTree = "<group>"; };
+		E4F047191C9DE93100D09D7E /* MockReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockReceiver.swift; sourceTree = "<group>"; };
+		E4F0471F1C9DE96800D09D7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F047201C9DE96800D09D7E /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		E4F047291C9DEBEC00D09D7E /* Portent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portent.h; sourceTree = "<group>"; };
+		E4F0472A1C9DEBEC00D09D7E /* Portent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portent.swift; sourceTree = "<group>"; };
+		E4F047351C9DEC6700D09D7E /* AppDelegateGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateGenerator.swift; sourceTree = "<group>"; };
+		E4F047361C9DEC6700D09D7E /* CoreDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataGenerator.swift; sourceTree = "<group>"; };
+		E4F0473A1C9DED2800D09D7E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E4F0473D1C9DED4600D09D7E /* EventReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventReceiver.swift; path = Protocols/EventReceiver.swift; sourceTree = "<group>"; };
+		E4F047401C9DED6100D09D7E /* ConsoleReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,55 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E46118C41C67F497002D8687 /* Resources */ = {
+		E47D14501C9DE8C800EEFBB4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E4F047181C9DE92300D09D7E /* Mock */,
+				E4F047151C9DE92000D09D7E /* PortentTests.swift */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		E46118C51C67F49E002D8687 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E4FB32861C6BFB5800CEDC52 /* Mock */,
-				E46118C61C67F4E9002D8687 /* PortentTests.swift */,
-				E4AD43131C6B2D8D00E852D1 /* ApplicationEventGeneratorTests.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		E46118CA1C6808B5002D8687 /* Generators */ = {
-			isa = PBXGroup;
-			children = (
-				E42E6B0B1C6882AC00DACF11 /* ApplicationEventGenerator.swift */,
-				E41DB8501C6A735B00EDD1C4 /* CoreDataEventGenerator.swift */,
-			);
-			path = Generators;
-			sourceTree = "<group>";
-		};
-		E46118CD1C680941002D8687 /* Receivers */ = {
-			isa = PBXGroup;
-			children = (
-				E42E6B0D1C6882B200DACF11 /* ConsoleReceiver.swift */,
-				E4FB32841C6BFA5E00CEDC52 /* LogglyReceiver.swift */,
-			);
-			path = Receivers;
-			sourceTree = "<group>";
-		};
-		E464A62A1C67DFCF0041E954 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				E464A62B1C67E0080041E954 /* ManagedObject.swift */,
-				E464A62D1C67E0D60041E954 /* ManagedObjectContext.swift */,
-			);
-			path = CoreData;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		E4DD21E81C5D70AB0057CF8F = {
 			isa = PBXGroup;
 			children = (
-				E4DD21F41C5D70AB0057CF8F /* Portent */,
-				E4DD22001C5D70AB0057CF8F /* PortentTests */,
+				E4F047251C9DE9D300D09D7E /* Resources */,
+				E4F047241C9DE99200D09D7E /* Sources */,
+				E4F0471B1C9DE94300D09D7E /* Support */,
+				E47D14501C9DE8C800EEFBB4 /* Tests */,
 				E4DD21F31C5D70AB0057CF8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,70 +93,74 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4DD21F41C5D70AB0057CF8F /* Portent */ = {
+		E4F047181C9DE92300D09D7E /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				E4DD220D1C5D70D40057CF8F /* Resources */,
-				E4DD220C1C5D70CD0057CF8F /* Source */,
+				E4F047191C9DE93100D09D7E /* MockReceiver.swift */,
 			);
-			path = Portent;
+			path = Mock;
 			sourceTree = "<group>";
 		};
-		E4DD22001C5D70AB0057CF8F /* PortentTests */ = {
+		E4F0471B1C9DE94300D09D7E /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				E46118C41C67F497002D8687 /* Resources */,
-				E46118C51C67F49E002D8687 /* Source */,
+				E4F0471F1C9DE96800D09D7E /* Info.plist */,
+				E4F047201C9DE96800D09D7E /* Tests-Info.plist */,
 			);
-			path = PortentTests;
+			path = Support;
 			sourceTree = "<group>";
 		};
-		E4DD220C1C5D70CD0057CF8F /* Source */ = {
+		E4F047241C9DE99200D09D7E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E464A62A1C67DFCF0041E954 /* CoreData */,
-				E46118CA1C6808B5002D8687 /* Generators */,
-				E4DD22211C5EA8AF0057CF8F /* Model */,
-				E4DD22181C5D74EA0057CF8F /* Portent.h */,
-				E4DD22121C5D71760057CF8F /* Portent.swift */,
-				E4DD221D1C5EA8500057CF8F /* Protocols */,
-				E46118CD1C680941002D8687 /* Receivers */,
-				E464A62F1C67E3470041E954 /* Stack.swift */,
+				E4F0473F1C9DED4C00D09D7E /* Receivers */,
+				E4F0473C1C9DED2F00D09D7E /* Protocols */,
+				E4F047391C9DED1600D09D7E /* Model */,
+				E4F047341C9DEC5300D09D7E /* Generators */,
+				E4F047291C9DEBEC00D09D7E /* Portent.h */,
+				E4F0472A1C9DEBEC00D09D7E /* Portent.swift */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		E4DD220D1C5D70D40057CF8F /* Resources */ = {
+		E4F047251C9DE9D300D09D7E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E4DD220E1C5D713A0057CF8F /* Info.plist */,
-				E4DD221A1C5D7F6E0057CF8F /* PortentModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E4DD221D1C5EA8500057CF8F /* Protocols */ = {
+		E4F047341C9DEC5300D09D7E /* Generators */ = {
 			isa = PBXGroup;
 			children = (
-				E4DD221F1C5EA8880057CF8F /* EventReceiver.swift */,
+				E4F047351C9DEC6700D09D7E /* AppDelegateGenerator.swift */,
+				E4F047361C9DEC6700D09D7E /* CoreDataGenerator.swift */,
 			);
-			path = Protocols;
+			path = Generators;
 			sourceTree = "<group>";
 		};
-		E4DD22211C5EA8AF0057CF8F /* Model */ = {
+		E4F047391C9DED1600D09D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E44A61EA1C64A3E3006B3A7D /* Event.swift */,
+				E4F0473A1C9DED2800D09D7E /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E4FB32861C6BFB5800CEDC52 /* Mock */ = {
+		E4F0473C1C9DED2F00D09D7E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E4FB32871C6BFB8F00CEDC52 /* MockReceiver.swift */,
+				E4F0473D1C9DED4600D09D7E /* EventReceiver.swift */,
 			);
-			path = Mock;
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		E4F0473F1C9DED4C00D09D7E /* Receivers */ = {
+			isa = PBXGroup;
+			children = (
+				E4F047401C9DED6100D09D7E /* ConsoleReceiver.swift */,
+			);
+			path = Receivers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,16 +170,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DD22191C5D74EA0057CF8F /* Portent.h in Headers */,
+				E4F0472C1C9DEBEC00D09D7E /* Portent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E4DD21F11C5D70AB0057CF8F /* Portent */ = {
+		E4DD21F11C5D70AB0057CF8F /* Portent(iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4DD22061C5D70AB0057CF8F /* Build configuration list for PBXNativeTarget "Portent" */;
+			buildConfigurationList = E4DD22061C5D70AB0057CF8F /* Build configuration list for PBXNativeTarget "Portent(iOS)" */;
 			buildPhases = (
 				E4DD21ED1C5D70AB0057CF8F /* Sources */,
 				E4DD21EE1C5D70AB0057CF8F /* Frameworks */,
@@ -231,7 +191,7 @@
 			);
 			dependencies = (
 			);
-			name = Portent;
+			name = "Portent(iOS)";
 			productName = Portent;
 			productReference = E4DD21F21C5D70AB0057CF8F /* Portent.framework */;
 			productType = "com.apple.product-type.framework";
@@ -284,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4DD21F11C5D70AB0057CF8F /* Portent */,
+				E4DD21F11C5D70AB0057CF8F /* Portent(iOS) */,
 				E4DD21FB1C5D70AB0057CF8F /* PortentTests */,
 			);
 		};
@@ -329,17 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42E6B0C1C6882AC00DACF11 /* ApplicationEventGenerator.swift in Sources */,
-				E42E6B0E1C6882B200DACF11 /* ConsoleReceiver.swift in Sources */,
-				E44A61EB1C64A3E3006B3A7D /* Event.swift in Sources */,
-				E4FB32851C6BFA5E00CEDC52 /* LogglyReceiver.swift in Sources */,
-				E41DB8511C6A735B00EDD1C4 /* CoreDataEventGenerator.swift in Sources */,
-				E4DD22201C5EA8880057CF8F /* EventReceiver.swift in Sources */,
-				E464A62C1C67E0080041E954 /* ManagedObject.swift in Sources */,
-				E464A62E1C67E0D60041E954 /* ManagedObjectContext.swift in Sources */,
-				E4DD22131C5D71760057CF8F /* Portent.swift in Sources */,
-				E4DD221C1C5D7F6E0057CF8F /* PortentModel.xcdatamodeld in Sources */,
-				E464A6301C67E3470041E954 /* Stack.swift in Sources */,
+				E4F0473B1C9DED2800D09D7E /* Event.swift in Sources */,
+				E4F0472D1C9DEBEC00D09D7E /* Portent.swift in Sources */,
+				E4F047421C9DED6100D09D7E /* ConsoleReceiver.swift in Sources */,
+				E4F047381C9DEC6700D09D7E /* CoreDataGenerator.swift in Sources */,
+				E4F047371C9DEC6700D09D7E /* AppDelegateGenerator.swift in Sources */,
+				E4F0473E1C9DED4600D09D7E /* EventReceiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FB32881C6BFB8F00CEDC52 /* MockReceiver.swift in Sources */,
-				E46118C71C67F4E9002D8687 /* PortentTests.swift in Sources */,
-				E4AD43141C6B2D8D00E852D1 /* ApplicationEventGeneratorTests.swift in Sources */,
+				E4F0471C1C9DE94E00D09D7E /* MockReceiver.swift in Sources */,
+				E4F0471E1C9DE95600D09D7E /* PortentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +312,7 @@
 /* Begin PBXTargetDependency section */
 		E4DD21FF1C5D70AB0057CF8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4DD21F11C5D70AB0057CF8F /* Portent */;
+			target = E4DD21F11C5D70AB0057CF8F /* Portent(iOS) */;
 			targetProxy = E4DD21FE1C5D70AB0057CF8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -381,6 +335,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -429,7 +384,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -461,11 +417,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Portent/Resources/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Portent;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Portent;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -479,11 +435,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Portent/Resources/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Portent;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Portent;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -492,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = PortentTests/Resources/Info.plist;
+				INFOPLIST_FILE = "Support/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.PortentTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,7 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = PortentTests/Resources/Info.plist;
+				INFOPLIST_FILE = "Support/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.PortentTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4DD22061C5D70AB0057CF8F /* Build configuration list for PBXNativeTarget "Portent" */ = {
+		E4DD22061C5D70AB0057CF8F /* Build configuration list for PBXNativeTarget "Portent(iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4DD22071C5D70AB0057CF8F /* Debug */,
@@ -542,19 +498,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E4DD221A1C5D7F6E0057CF8F /* PortentModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E4DD221B1C5D7F6E0057CF8F /* PortentModel.xcdatamodel */,
-			);
-			currentVersion = E4DD221B1C5D7F6E0057CF8F /* PortentModel.xcdatamodel */;
-			path = PortentModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E4DD21E91C5D70AB0057CF8F /* Project object */;
 }

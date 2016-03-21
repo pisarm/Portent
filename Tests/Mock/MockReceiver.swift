@@ -10,15 +10,21 @@ import Foundation
 
 @testable import Portent
 
-final class MockReceiver: EventReceiver {
-    var token: String?
+final class MockReceiver {
+    var eventLogged: Event?
     var eventTypes: [EventType]
 
-    init(eventTypes: [EventType] = [.Trace, .Debug, .Info, .Warn, .Error, .Fatal]) {
+    init(eventTypes:[EventType]) {
         self.eventTypes = eventTypes
     }
+}
 
-    func log(context: ManagedObjectContext, events: [Event]) {
+extension MockReceiver: EventReceiver {
+//    var eventTypes: [EventType] {
+//        return eventTypes
+//    }
 
+    func log(event: Event) {
+        eventLogged = event
     }
 }

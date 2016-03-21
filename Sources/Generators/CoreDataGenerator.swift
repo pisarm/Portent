@@ -9,12 +9,12 @@
 import CoreData
 import Foundation
 
-final class CoreDataEventGenerator {
-    private var context: ManagedObjectContext?
+final class CoreDataGenerator {
+    private var context: NSManagedObjectContext?
     private let eventType: EventType
-    private let logger: PortentType
+    private let logger: Portent
 
-    init(observedContext context: ManagedObjectContext, eventType: EventType = .Info, logger: PortentType) {
+    init(observedContext context: NSManagedObjectContext, eventType: EventType = .Info, logger: Portent) {
         self.context = context
         self.eventType = eventType
         self.logger = logger
@@ -35,10 +35,7 @@ final class CoreDataEventGenerator {
     }
 
     private dynamic func log(notification: NSNotification) {
-        //        if context == logger.context {
-        //            return
-        //        }
-        //TODO: log inserted, updated, deleted objects (+ability to switch off) (LogLevel: Default, Verbose)
-        //        logger.log(eventType, message: notification.name)
+        //TODO: Log inserted/updated/deleted objects (name? objectID?) notification.userInfo as payload?
+        logger.log(eventType, message: notification.name)
     }
 }
