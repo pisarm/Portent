@@ -38,11 +38,11 @@ public final class AppDelegateGenerator {
             UIApplicationWillChangeStatusBarFrameNotification,
             UIApplicationDidChangeStatusBarFrameNotification,
             ].forEach {
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "log:", name: $0, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegateGenerator.log(_:)), name: $0, object: nil)
         }
     }
 
-    private func log(notification: NSNotification) {
+    private dynamic func log(notification: NSNotification) {
         guard let userInfo = notification.userInfo as? [String:AnyObject] else {
             logger.log(eventType, message: notification.name)
             return

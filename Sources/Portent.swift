@@ -25,31 +25,31 @@ public final class Portent {
 
 extension Portent {
     //MARK: Logging
-    public func trace(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func trace(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Trace, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func debug(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func debug(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Debug, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func info(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func info(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Info, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func warn(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func warn(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Warn, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func error(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func error(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Error, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func fatal(message: String?, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func fatal(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         log(.Fatal, message: message, payload: payload, fileName: fileName, line: line)
     }
 
-    public func log(eventType: EventType, message: String? = nil, payload: [String:AnyObject]? = nil, fileName: String = __FILE__, line: Int = __LINE__) {
+    public func log(eventType: EventType, message: String? = nil, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
         if message == nil && payload == nil {
             return
         }

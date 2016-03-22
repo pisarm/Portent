@@ -30,7 +30,7 @@ public final class CoreDataGenerator {
         [NSManagedObjectContextWillSaveNotification,
             NSManagedObjectContextDidSaveNotification,
             ].forEach {
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "log:", name: $0, object: context)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CoreDataGenerator.log(_:)), name: $0, object: context)
         }
     }
 

@@ -14,7 +14,7 @@ final class MockReceiver {
     var eventLogged: Event?
     var eventTypes: [EventType]
 
-    init(eventTypes:[EventType]) {
+    init(eventTypes: [EventType]) {
         self.eventTypes = eventTypes
     }
 }

@@ -1,3 +1,5 @@
+[![Build Status](https://www.bitrise.io/app/e01e88360a41b922.svg?token=6o57StE7ciYdmYZcJ-yPlQ&branch=master)](https://www.bitrise.io/app/e01e88360a41b922)
+
 # Portent
 
 Portent is a logging framework.
