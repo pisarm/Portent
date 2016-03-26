@@ -31,6 +31,13 @@ final class PortentTests: XCTestCase {
         super.tearDown()
     }
 
+    func testNilMessageAndPayload() {
+        logger.log(.Trace)
+
+        XCTAssertNil(mockReceiver.eventLogged)
+        XCTAssertNil(mockReceiver.payloadLogged)
+    }
+
     func testLogTraceMessage() {
         logger.trace(logString)
 

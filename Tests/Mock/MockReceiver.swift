@@ -12,6 +12,7 @@ import Foundation
 
 final class MockReceiver {
     var eventLogged: Event?
+    var payloadLogged: [String:AnyObject]?
     var eventTypes: [EventType]
 
     init(eventTypes: [EventType]) {
