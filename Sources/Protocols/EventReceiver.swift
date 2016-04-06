@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol EventReceiver {
-    var eventTypes: [EventType] { get }
+    var eventLevels: [EventLevel] { get }
     func log(event: Event)
 }

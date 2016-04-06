@@ -14,12 +14,17 @@ final class PortentTests: XCTestCase {
     var mockReceiver: MockReceiver!
 
     let logString = "foo"
-    let customName = "BAR"
+    let customLevelKey = "CUSTOM"
+
+    let check: (loggedEvent: Event, expectedMessage: String, expectedEventLevelDescription: String) -> Void = { loggedEvent, logString, eventLevelDescription in
+        XCTAssertEqual(loggedEvent.message, logString)
+        XCTAssertEqual(loggedEvent.eventLevel.description, eventLevelDescription)
+    }
 
     override func setUp() {
         super.setUp()
 
-        mockReceiver = MockReceiver(eventTypes: [.Trace, .Debug, .Info, .Warn, .Error, .Fatal, .Custom(name: customName)])
+        mockReceiver = MockReceiver(eventLevels: [.Custom(key: customLevelKey), .Error, .Debug, .Info, .Trace, .Warn])
 
         logger = Portent()
         logger.addReceiver(mockReceiver)
@@ -27,77 +32,39 @@ final class PortentTests: XCTestCase {
 
     override func tearDown() {
 
-
         super.tearDown()
     }
 
-    func testNilMessageAndPayload() {
-        logger.log(.Trace)
+    //MARK: Logging
+    func testCustom() {
+        let data = MockData(name: logString)
+        logger.custom(data, key: customLevelKey)    
 
-        XCTAssertNil(mockReceiver.eventLogged)
-        XCTAssertNil(mockReceiver.payloadLogged)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: customLevelKey)
     }
 
-    func testLogTraceMessage() {
-        logger.trace(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("TRACE", event.type)
-    }
-
-    func testLogDebugMessage() {
+    func testDebug() {
         logger.debug(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("DEBUG", event.type)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "DEBUG")
     }
 
-    func testLogInfoMessage() {
-        logger.info(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("INFO", event.type)
-    }
-
-    func testLogWarnMessage() {
-        logger.warn(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("WARN", event.type)
-    }
-
-    func testLogErrorMessage() {
+    func testError() {
         logger.error(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("ERROR", event.type)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "ERROR")
     }
 
-    func testLogFatalMessage() {
-        logger.fatal(logString)
-
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual("FATAL", event.type)
+    func testInfo() {
+        logger.info(logString)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "INFO")
     }
 
-    func testLogCustomMessage() {
-        logger.log(.Custom(name: customName), message: logString)
+    func testTrace() {
+        logger.trace(logString)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "TRACE")
+    }
 
-        let event = mockReceiver.eventLogged!
-
-        XCTAssertEqual(event.message!, logString)
-        XCTAssertEqual(customName, event.type)
+    func testWarn() {
+        logger.warn(logString)
+        check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "WARN")
     }
 }

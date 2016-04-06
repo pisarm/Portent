@@ -17,7 +17,7 @@ public final class Portent {
         self.receivers = []
     }
 
-    //MARK:
+    //MARK: Receiver
     public func addReceiver(receiver: EventReceiver) {
         receivers.append(receiver)
     }
@@ -25,40 +25,48 @@ public final class Portent {
 
 extension Portent {
     //MARK: Logging
-    public func trace(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Trace, message: message, payload: payload, fileName: fileName, line: line)
+    public func custom<M>(@autoclosure message: () -> M, key: String, fileName: String = #file, line: Int = #line) {
+        propogate(message, eventLevel: .Custom(key: key), fileName: fileName, line: line)
     }
 
-    public func debug(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Debug, message: message, payload: payload, fileName: fileName, line: line)
+    public func debug<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
+        log(message, eventLevel: .Debug, fileName: fileName, line: line)
     }
 
-    public func info(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Info, message: message, payload: payload, fileName: fileName, line: line)
+    public func error<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
+        log(message, eventLevel: .Error, fileName: fileName, line: line)
     }
 
-    public func warn(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Warn, message: message, payload: payload, fileName: fileName, line: line)
+    public func info<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
+        log(message, eventLevel: .Info, fileName: fileName, line: line)
     }
 
-    public func error(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Error, message: message, payload: payload, fileName: fileName, line: line)
+    public func trace<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
+        log(message, eventLevel: .Trace, fileName: fileName, line: line)
     }
 
-    public func fatal(message: String?, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        log(.Fatal, message: message, payload: payload, fileName: fileName, line: line)
+    public func warn<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
+        log(message, eventLevel: .Warn, fileName: fileName, line: line)
+    }
+}
+
+extension Portent {
+    //MARK: Internal
+    private func log<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
+        propogate(message, eventLevel: eventLevel, fileName: fileName, line: line)
     }
 
-    public func log(eventType: EventType, message: String? = nil, payload: [String:AnyObject]? = nil, fileName: String = #file, line: Int = #line) {
-        if message == nil && payload == nil {
-            return
+    private func propogate<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
+        var event: Event?
+        receivers.forEach {
+            if $0.eventLevels.contains(eventLevel) {
+                if event == nil {
+                    event = Event(message: "\(message())", eventLevel: eventLevel, fileName: stripPath(fileName), line: line)
+                }
+
+                $0.log(event!)
+            }
         }
-
-        let event = Event(fileName: stripPath(fileName), line: line, message: message, payload: payload, eventType: eventType)
-
-        receivers
-            .filter { $0.eventTypes.contains(eventType)}
-            .forEach { $0.log(event) }
     }
 
     private func stripPath(path: String) -> String {

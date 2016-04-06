@@ -10,20 +10,13 @@ import Foundation
 
 @testable import Portent
 
-final class MockReceiver {
+final class MockReceiver: EventReceiver {
     var eventLogged: Event?
-    var payloadLogged: [String:AnyObject]?
-    var eventTypes: [EventType]
+    var eventLevels: [EventLevel]
 
-    init(eventTypes: [EventType]) {
-        self.eventTypes = eventTypes
+    init(eventLevels: [EventLevel]) {
+        self.eventLevels = eventLevels
     }
-}
-
-extension MockReceiver: EventReceiver {
-//    var eventTypes: [EventType] {
-//        return eventTypes
-//    }
 
     func log(event: Event) {
         eventLogged = event

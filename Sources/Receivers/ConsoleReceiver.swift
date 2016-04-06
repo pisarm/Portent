@@ -20,20 +20,12 @@ public final class ConsoleReceiver {
 
 extension ConsoleReceiver: EventReceiver {
     //MARK: EventReceiver
-    public var eventTypes: [EventType] {
-        return [.Trace, .Debug, .Info, .Warn, .Error, .Fatal]
+    public var eventLevels: [EventLevel] {
+        return [.Debug, .Error, .Info, .Trace, .Warn]
     }
 
     public func log(event: Event) {
-        var output = "\(event.type) \(event.fileName):\(event.line)"
-
-        if let message = event.message {
-            output += " \(message)"
-        }
-
-        if let payload = event.payload {
-            output += " \(payload)"
-        }
+        let output = "\(event.eventLevel.description) \(event.fileName):\(event.line) \(event.message)"
 
         dispatch_async(serialQueue) {
             print(output)

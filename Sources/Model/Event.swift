@@ -8,57 +8,52 @@
 
 import Foundation
 
-public enum EventType {
-    case Trace
+public enum EventLevel {
+    case Custom(key: String)
     case Debug
-    case Info
-    case Warn
     case Error
-    case Fatal
-    case Custom(name: String)
+    case Info
+    case Trace
+    case Warn
 }
 
-extension EventType: CustomStringConvertible {
+extension EventLevel: CustomStringConvertible {
     //MARK: CustomStringConvertible
     public var description: String {
         switch self {
-        case Trace:
-            return "TRACE"
+        case let Custom(key):
+            return key
         case Debug:
             return "DEBUG"
-        case Info:
-            return "INFO"
-        case Warn:
-            return "WARN"
         case Error:
             return "ERROR"
-        case Fatal:
-            return "FATAL"
-        case let Custom(name):
-            return name
+        case Info:
+            return "INFO"
+        case Trace:
+            return "TRACE"
+        case Warn:
+            return "WARN"
         }
     }
 }
 
-extension EventType: Equatable {}
+extension EventLevel: Equatable {}
 //MARK: Equatable
-public func == (lhs: EventType, rhs: EventType) -> Bool {
+public func == (lhs: EventLevel, rhs: EventLevel) -> Bool {
     return lhs.description == rhs.description
 }
 
 public struct Event {
     let created: NSDate = NSDate()
-    var fileName: String
-    var line: Int
-    var message: String?
-    var payload: [String:AnyObject]?
-    private(set) var type: String
+    let eventLevel: EventLevel
+    let fileName: String
+    let line: Int
+    let message: String
 
-    init(fileName: String, line: Int, message: String?, payload: [String:AnyObject]?, eventType: EventType) {
+    init(message: String, eventLevel: EventLevel, fileName: String, line: Int) {
+        self.message = message
+        self.eventLevel = eventLevel
         self.fileName = fileName
         self.line = line
-        self.message = message
-        self.payload = payload
-        self.type = eventType.description
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E46FDAEB1CB584730012CABB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FDAE91CB5835E0012CABB /* MockData.swift */; };
+		E47759CA1CB2532C0044FB20 /* SysInfoGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47759C91CB2532C0044FB20 /* SysInfoGenerator.swift */; };
 		E4DD21FD1C5D70AB0057CF8F /* Portent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD21F21C5D70AB0057CF8F /* Portent.framework */; };
 		E4F0471C1C9DE94E00D09D7E /* MockReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047191C9DE93100D09D7E /* MockReceiver.swift */; };
 		E4F0471E1C9DE95600D09D7E /* PortentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F047151C9DE92000D09D7E /* PortentTests.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E46FDAE91CB5835E0012CABB /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		E47759C91CB2532C0044FB20 /* SysInfoGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysInfoGenerator.swift; sourceTree = "<group>"; };
 		E4DD21F21C5D70AB0057CF8F /* Portent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Portent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DD21FC1C5D70AB0057CF8F /* PortentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F047151C9DE92000D09D7E /* PortentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortentTests.swift; sourceTree = "<group>"; };
@@ -76,11 +80,10 @@
 		E4DD21E81C5D70AB0057CF8F = {
 			isa = PBXGroup;
 			children = (
-				E4F047251C9DE9D300D09D7E /* Resources */,
+				E4DD21F31C5D70AB0057CF8F /* Products */,
 				E4F047241C9DE99200D09D7E /* Sources */,
 				E4F0471B1C9DE94300D09D7E /* Support */,
 				E47D14501C9DE8C800EEFBB4 /* Tests */,
-				E4DD21F31C5D70AB0057CF8F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E4F047191C9DE93100D09D7E /* MockReceiver.swift */,
+				E46FDAE91CB5835E0012CABB /* MockData.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -113,21 +117,14 @@
 		E4F047241C9DE99200D09D7E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E4F0473F1C9DED4C00D09D7E /* Receivers */,
-				E4F0473C1C9DED2F00D09D7E /* Protocols */,
-				E4F047391C9DED1600D09D7E /* Model */,
 				E4F047341C9DEC5300D09D7E /* Generators */,
+				E4F047391C9DED1600D09D7E /* Model */,
 				E4F047291C9DEBEC00D09D7E /* Portent.h */,
 				E4F0472A1C9DEBEC00D09D7E /* Portent.swift */,
+				E4F0473C1C9DED2F00D09D7E /* Protocols */,
+				E4F0473F1C9DED4C00D09D7E /* Receivers */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		E4F047251C9DE9D300D09D7E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		E4F047341C9DEC5300D09D7E /* Generators */ = {
@@ -135,6 +132,7 @@
 			children = (
 				E4F047351C9DEC6700D09D7E /* AppDelegateGenerator.swift */,
 				E4F047361C9DEC6700D09D7E /* CoreDataGenerator.swift */,
+				E47759C91CB2532C0044FB20 /* SysInfoGenerator.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -289,12 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4F0473B1C9DED2800D09D7E /* Event.swift in Sources */,
-				E4F0472D1C9DEBEC00D09D7E /* Portent.swift in Sources */,
+				E4F047371C9DEC6700D09D7E /* AppDelegateGenerator.swift in Sources */,
 				E4F047421C9DED6100D09D7E /* ConsoleReceiver.swift in Sources */,
 				E4F047381C9DEC6700D09D7E /* CoreDataGenerator.swift in Sources */,
-				E4F047371C9DEC6700D09D7E /* AppDelegateGenerator.swift in Sources */,
+				E4F0473B1C9DED2800D09D7E /* Event.swift in Sources */,
 				E4F0473E1C9DED4600D09D7E /* EventReceiver.swift in Sources */,
+				E4F0472D1C9DEBEC00D09D7E /* Portent.swift in Sources */,
+				E47759CA1CB2532C0044FB20 /* SysInfoGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F0471C1C9DE94E00D09D7E /* MockReceiver.swift in Sources */,
+				E46FDAEB1CB584730012CABB /* MockData.swift in Sources */,
 				E4F0471E1C9DE95600D09D7E /* PortentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
