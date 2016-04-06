@@ -38,7 +38,7 @@ final class PortentTests: XCTestCase {
     //MARK: Logging
     func testCustom() {
         let data = MockData(name: logString)
-        logger.custom(data, key: customLevelKey)    
+        logger.custom(data, key: customLevelKey)
 
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: customLevelKey)
     }
