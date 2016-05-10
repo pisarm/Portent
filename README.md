@@ -2,14 +2,13 @@
 
 # Portent
 
-Portent is a logging framework.
+Portent is a simple, lightweight logging framework.
 
 Features already implemented:
 - Minimalistic logger - no persistence, this should be handled by each receiver if necessary
 - Console logger, non-blocking
+- Generators (Core Data and AppDelegate events)
 
 Not implemented yet:
 - Logging service receivers
 - More event generators
-- Event generators (Core Data, AppDelegate info and System info planned for now)
-
