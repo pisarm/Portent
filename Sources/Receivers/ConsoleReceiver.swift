@@ -11,6 +11,7 @@ import Foundation
 public final class ConsoleReceiver {
     //MARK: Properties
     private let serialQueue: dispatch_queue_t
+    //TODO: Date formatter (overridable - used to prefix output)
 
     //MARK: Initialization
     public init() {
@@ -26,7 +27,6 @@ extension ConsoleReceiver: EventReceiver {
 
     public func log(event: Event) {
         let output = "\(event.eventLevel.description) \(event.fileName):\(event.line) \(event.message)"
-
         dispatch_async(serialQueue) {
             print(output)
         }
