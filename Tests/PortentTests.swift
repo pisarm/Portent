@@ -28,6 +28,7 @@ final class PortentTests: XCTestCase {
 
         logger = Portent()
         logger.addReceiver(mockReceiver)
+        logger.addReceiver(ConsoleReceiver())
     }
 
     override func tearDown() {
@@ -35,7 +36,7 @@ final class PortentTests: XCTestCase {
         super.tearDown()
     }
 
-    //MARK: Logging
+    //MARK: Tests
     func testCustom() {
         let data = MockData(name: logString)
         logger.custom(data, key: customLevelKey)
