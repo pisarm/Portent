@@ -1,33 +1,39 @@
 //
-//  ApplicationEventGenerator.swift
+//  AppDelegateGeneratorTests.swift
 //  Portent
 //
-//  Created by Flemming Pedersen on 08/02/16.
+//  Created by Flemming Pedersen on 10/05/16.
 //  Copyright © 2016 pisarm.dk. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import XCTest
+@testable import Portent
 
-public final class AppDelegateGenerator {
-    //MARK: Properties
-    private let eventLevel: EventLevel
-    private let logger: Portent
+final class AppDelegateGeneratorTests: XCTestCase {
+    var generator: AppDelegateGenerator!
+    var logger: Portent!
+    var mockReceiver: MockReceiver!
 
-    //MARK: Life cycle
-    public init(eventLevel: EventLevel = .Info, logger: Portent) {
-        self.eventLevel = eventLevel
-        self.logger = logger
+    override func setUp() {
+        super.setUp()
 
-        setupObservers()
+        let eventLevel: EventLevel = .Info
+
+        mockReceiver = MockReceiver(eventLevels: [eventLevel])
+
+        logger = Portent()
+        logger.addReceiver(mockReceiver)
+
+        generator = AppDelegateGenerator(eventLevel: eventLevel, logger: logger)
     }
 
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    override func tearDown() {
+        super.tearDown()
     }
 
-    //MARK: Setup
-    private func setupObservers() {
+    //MARK: Tests
+    func testNotifications() {
         [UIApplicationDidFinishLaunchingNotification,
             UIApplicationWillEnterForegroundNotification,
             UIApplicationDidBecomeActiveNotification,
@@ -41,12 +47,8 @@ public final class AppDelegateGenerator {
             UIApplicationWillChangeStatusBarFrameNotification,
             UIApplicationDidChangeStatusBarFrameNotification]
             .forEach {
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegateGenerator.log(_:)), name: $0, object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName($0, object: nil)
+                XCTAssertEqual(mockReceiver.eventLogged?.message, $0)
             }
-    }
-
-    //MARK: Logging
-    private dynamic func log(notification: NSNotification) {
-        logger.log(notification.name, eventLevel: eventLevel)
     }
 }
