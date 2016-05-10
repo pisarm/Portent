@@ -48,14 +48,14 @@ extension Portent {
     public func warn<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
         log(message, eventLevel: .Warn, fileName: fileName, line: line)
     }
+
+    public func log<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
+        propogate(message, eventLevel: eventLevel, fileName: fileName, line: line)
+    }
 }
 
 extension Portent {
     //MARK: Internal
-    private func log<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
-        propogate(message, eventLevel: eventLevel, fileName: fileName, line: line)
-    }
-
     private func propogate<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
         var event: Event?
         receivers.forEach {
