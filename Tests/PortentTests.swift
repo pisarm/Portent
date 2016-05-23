@@ -27,8 +27,7 @@ final class PortentTests: XCTestCase {
         mockReceiver = MockReceiver(eventLevels: [.Custom(key: customLevelKey), .Error, .Debug, .Info, .Trace, .Warn])
 
         logger = Portent()
-        logger.addReceiver(mockReceiver)
-        logger.addReceiver(ConsoleReceiver())
+        logger.addReceiver(receiver: mockReceiver)
     }
 
     override func tearDown() {
@@ -39,33 +38,33 @@ final class PortentTests: XCTestCase {
     //MARK: Tests
     func testCustom() {
         let data = MockData(name: logString)
-        logger.custom(data, key: customLevelKey)
+        logger.custom(message: data, key: customLevelKey)
 
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: customLevelKey)
     }
 
     func testDebug() {
-        logger.debug(logString)
+        logger.debug(message: logString)
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "DEBUG")
     }
 
     func testError() {
-        logger.error(logString)
+        logger.error(message: logString)
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "ERROR")
     }
 
     func testInfo() {
-        logger.info(logString)
+        logger.info(message: logString)
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "INFO")
     }
 
     func testTrace() {
-        logger.trace(logString)
+        logger.trace(message: logString)
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "TRACE")
     }
 
     func testWarn() {
-        logger.warn(logString)
+        logger.warn(message: logString)
         check(loggedEvent: mockReceiver.eventLogged!, expectedMessage: logString, expectedEventLevelDescription: "WARN")
     }
 }

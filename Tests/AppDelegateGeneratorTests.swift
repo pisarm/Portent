@@ -23,7 +23,7 @@ final class AppDelegateGeneratorTests: XCTestCase {
         mockReceiver = MockReceiver(eventLevels: [eventLevel])
 
         logger = Portent()
-        logger.addReceiver(mockReceiver)
+        logger.addReceiver(receiver: mockReceiver)
 
         generator = AppDelegateGenerator(eventLevel: eventLevel, logger: logger)
     }
@@ -47,7 +47,7 @@ final class AppDelegateGeneratorTests: XCTestCase {
             UIApplicationWillChangeStatusBarFrameNotification,
             UIApplicationDidChangeStatusBarFrameNotification]
             .forEach {
-                NSNotificationCenter.defaultCenter().postNotificationName($0, object: nil)
+                NSNotificationCenter.default().post(name: $0, object: nil)
                 XCTAssertEqual(mockReceiver.eventLogged?.message, $0)
             }
     }

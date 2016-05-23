@@ -25,20 +25,20 @@ public final class CoreDataGenerator {
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.default().removeObserver(self)
     }
 
     //MARK: Setup
     private func setupObservers() {
         [ NSManagedObjectContextWillSaveNotification, NSManagedObjectContextDidSaveNotification ]
             .forEach {
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(log(_:)), name: $0, object: context)
+                NSNotificationCenter.default().addObserver(self, selector: #selector(log(notification:)), name: $0, object: context)
             }
     }
 
     //MARK: Logging
     private dynamic func log(notification: NSNotification) {
         //TODO: Log insert/updated/deleted objects (remember thread safety)
-        logger.log("\(context?.name): \(notification.name)", eventLevel: eventLevel)
+        logger.log(message: "\(context?.name): \(notification.name)", eventLevel: eventLevel)
     }
 }

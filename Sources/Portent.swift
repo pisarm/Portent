@@ -25,51 +25,51 @@ public final class Portent {
 
 extension Portent {
     //MARK: Logging
-    public func custom<M>(@autoclosure message: () -> M, key: String, fileName: String = #file, line: Int = #line) {
-        propogate(message, eventLevel: .Custom(key: key), fileName: fileName, line: line)
+    public func custom<M>(message: @autoclosure () -> M, key: String, fileName: String = #file, line: Int = #line) {
+        propogate(message: message, eventLevel: .Custom(key: key), fileName: fileName, line: line)
     }
 
-    public func debug<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
-        log(message, eventLevel: .Debug, fileName: fileName, line: line)
+    public func debug<M>(message: @autoclosure () -> M, fileName: String = #file, line: Int = #line) {
+        log(message: message, eventLevel: .Debug, fileName: fileName, line: line)
     }
 
-    public func error<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
-        log(message, eventLevel: .Error, fileName: fileName, line: line)
+    public func error<M>(message: @autoclosure () -> M, fileName: String = #file, line: Int = #line) {
+        log(message: message, eventLevel: .Error, fileName: fileName, line: line)
     }
 
-    public func info<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
-        log(message, eventLevel: .Info, fileName: fileName, line: line)
+    public func info<M>(message: @autoclosure () -> M, fileName: String = #file, line: Int = #line) {
+        log(message: message, eventLevel: .Info, fileName: fileName, line: line)
     }
 
-    public func trace<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
-        log(message, eventLevel: .Trace, fileName: fileName, line: line)
+    public func trace<M>(message: @autoclosure () -> M, fileName: String = #file, line: Int = #line) {
+        log(message: message, eventLevel: .Trace, fileName: fileName, line: line)
     }
 
-    public func warn<M>(@autoclosure message: () -> M, fileName: String = #file, line: Int = #line) {
-        log(message, eventLevel: .Warn, fileName: fileName, line: line)
+    public func warn<M>(message: @autoclosure () -> M, fileName: String = #file, line: Int = #line) {
+        log(message: message, eventLevel: .Warn, fileName: fileName, line: line)
     }
 
-    public func log<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
-        propogate(message, eventLevel: eventLevel, fileName: fileName, line: line)
+    public func log<M>(message: @autoclosure () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
+        propogate(message: message, eventLevel: eventLevel, fileName: fileName, line: line)
     }
 }
 
 extension Portent {
     //MARK: Internal
-    private func propogate<M>(@autoclosure message: () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
+    private func propogate<M>(message: @autoclosure () -> M, eventLevel: EventLevel, fileName: String = #file, line: Int = #line) {
         var event: Event?
         receivers.forEach {
             if $0.eventLevels.contains(eventLevel) {
                 if event == nil {
-                    event = Event(message: "\(message())", eventLevel: eventLevel, fileName: stripPath(fileName), line: line)
+                    event = Event(message: "\(message())", eventLevel: eventLevel, fileName: strip(path: fileName), line: line)
                 }
 
-                $0.log(event!)
+                $0.log(event: event!)
             }
         }
     }
 
-    private func stripPath(path: String) -> String {
+    private func strip(path: String) -> String {
         return path.characters
             .split { $0 == "/" }
             .map { String($0) }
